@@ -120,19 +120,19 @@ form.addEventListener('submit', function(e) {
    
   
     const valid = alapcheck(szarmazas, "Származás nem jó",);
-    alapcheck(szerzo, "Szerző nem jó");
-    alapcheck(szerzomu, "Mű nem jó");
+    const valid1 = alapcheck(szerzo, "Szerző nem jó");
+    const valid2 = alapcheck(szerzomu, "Mű nem jó");
     
     
-    optionalcheck(szerzo1, szerzo1mu, "Kérlek előszőr szerzőt adj meg!")  //függvényhívás bemeneti értékkel
-    optionalcheck(szerzo1mu, szerzo1, "Ha megadtad a második szerzőt kérlek töltsd ki a második szerző művet.")  //függvényhívás bemeneti értékkel
+    const valid3 = optionalcheck(szerzo1, szerzo1mu, "Kérlek előszőr szerzőt adj meg!")  //függvényhívás bemeneti értékkel
+    const valid4 = optionalcheck(szerzo1mu, szerzo1, "Ha megadtad a második szerzőt kérlek töltsd ki a második szerző művet.")  //függvényhívás bemeneti értékkel
     
 
 
 
     form.reset()
 
-    if(valid) {
+    if(valid &&valid1 && valid2 && valid3 && valid4) {
         const ujadat = { // egy uj objektumot hozunk létre 
             Nemzetiség: szarmazasertek, 
             Szerző : szerzoertek, 

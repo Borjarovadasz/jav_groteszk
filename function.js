@@ -62,7 +62,7 @@ function headergenerator(headerobjek,sor) {
      */
     
   function alapcheck(ertek, uzenet) { 
-    let jo = false
+    let jo = true
     if (!ertek.value) {  //hogyha a bejövö értéknek a valuja undefined vagy ""
         const parentElement = ertek.parentElement;  //megnézzük a parentelementjét a bejövő HTMLELEMENT-nek
         const errormsg = parentElement.querySelector('.error');  //megnézzük hogy van benne olyan element aminek a class-ja error.
@@ -70,10 +70,10 @@ function headergenerator(headerobjek,sor) {
             errormsg.innerHTML = uzenet; //legyen a megadott uzenetünk az
           
         }
-        return jo
+        jo = false
         
     }
-    return jo = true
+    return jo
     
 }
 
@@ -84,6 +84,7 @@ function headergenerator(headerobjek,sor) {
      * @param {string} uzenet 
      */
   function optionalcheck(ertek, ertek2, uzenet) {
+    let jo = true
     if (!ertek.value && ertek2.value) {  //hogyha az egyik bejővő érték undefined vagy "" és a másik pedig létezik
         valid = false //akkor legyen valid false
         const parentElement = ertek.parentElement;  //megnézzük a parentelementjét a bejövő HTMLELEMENT-nek
@@ -91,7 +92,9 @@ function headergenerator(headerobjek,sor) {
         if (errormsg) { //ha az errormsg van akkor 
             errormsg.innerHTML = uzenet; //legyen a megadott uzenetünk az
         }
+        jo = false
     }
+    return jo
 
 }
 
