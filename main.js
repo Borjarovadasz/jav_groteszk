@@ -119,13 +119,13 @@ form.addEventListener('submit', function(e) {
     }   
    
   
-    const valid = alapcheck(szarmazas, "Származás nem jó",);
-    const valid1 = alapcheck(szerzo, "Szerző nem jó");
-    const valid2 = alapcheck(szerzomu, "Mű nem jó");
+    const valid = alapcheck(szarmazas, "Származás nem jó",); //itt megkapjuk a függvénynek a visszatérési értékét és azt nézzük majd meg mielött feltöltjük az arraybe az uj adatokat
+    const valid1 = alapcheck(szerzo, "Szerző nem jó"); //itt megkapjuk a függvénynek a visszatérési értékét és azt nézzük majd meg mielött feltöltjük az arraybe az uj adatokat
+    const valid2 = alapcheck(szerzomu, "Mű nem jó"); //itt megkapjuk a függvénynek a visszatérési értékét és azt nézzük majd meg mielött feltöltjük az arraybe az uj adatokat
     
     
-    const valid3 = optionalcheck(szerzo1, szerzo1mu, "Kérlek előszőr szerzőt adj meg!")  //függvényhívás bemeneti értékkel
-    const valid4 = optionalcheck(szerzo1mu, szerzo1, "Ha megadtad a második szerzőt kérlek töltsd ki a második szerző művet.")  //függvényhívás bemeneti értékkel
+    const valid3 = optionalcheck(szerzo1, szerzo1mu, "Kérlek előszőr szerzőt adj meg!")  //függvényhívás bemeneti értékkel, //itt megkapjuk a függvénynek a visszatérési értékét és azt nézzük majd meg mielött feltöltjük az arraybe az uj adatokat
+    const valid4 = optionalcheck(szerzo1mu, szerzo1, "Ha megadtad a második szerzőt kérlek töltsd ki a második szerző művet.")  //függvényhívás bemeneti értékkel, //itt megkapjuk a függvénynek a visszatérési értékét és azt nézzük majd meg mielött feltöltjük az arraybe az uj adatokat
     
 
 
