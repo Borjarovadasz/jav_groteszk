@@ -140,10 +140,58 @@ form.addEventListener('submit', function(e) {
         valid = false
     }
     
+    const form = e.currentTarget  
+    const errorhtml = form.querySelectorAll('.error') //a formon belül mindenet aminek error classal rendelkezik beletesszük egy változoba
+    for(const errorelement of errorhtml){  //minden egyes element ami ebben az errorhtml-ben van 
+        errorelement.innerHTML = '' //annak legyen az innerhtml-je üres string. (igy eltűnik majd a validácios szöveg ha tényleg irunk valamit)
+    }   
     
     
+    function alapcheck(ertek, uzenet) {
+        if (!ertek.value) { 
+            valid = false
+            const parentElement = ertek.parentElement; 
+            const errormsg = parentElement.querySelector('.error'); 
+            if (errormsg) { //ha az errormsg van akkor 
+                errormsg.innerHTML = uzenet; //legyen a megadott uzenetünk az
+            }
+        }
     
+    }
     
+    alapcheck(szarmazas, "Szarmazas nem jó")
+    alapcheck(szerzo, "Szerzo nem jó")
+    alapcheck(szerzomu, "Mű nem jó nem jó")
+
+
+    if(szarmazasertek && szerzoertek && szerzomuertek && !szerzo1ertek) {
+        valid = true    
+    }
+
+    if(!szerzo1ertek && szerzo1muertek) {
+        const parentElement = szerzo1.parentElement; 
+        const errormsg = parentElement.querySelector('.error'); 
+        if (errormsg) { //ha az errormsg van akkor 
+            errormsg.innerHTML = "Kötelező a szerzőművet kitölteni"; //legyen a megadott uzenetünk az
+
+        }
+        valid = false
+    }
+
+
+    if(szerzo1ertek && !szerzo1muertek) {
+        const parentElement = szerzo1mu.parentElement; 
+        const errormsg = parentElement.querySelector('.error'); 
+        if (errormsg) { //ha az errormsg van akkor 
+            errormsg.innerHTML = "Kötelező a szerzőművet kitölteni"; //legyen a megadott uzenetünk az
+           
+        }
+        valid = false
+        
+    }
+    form.reset()
+
+
     if(valid) {
         const ujadat = { // egy uj objektumot hozunk létre 
             Nemzetiség: szarmazasertek, 
