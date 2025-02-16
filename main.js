@@ -164,9 +164,6 @@ form.addEventListener('submit', function(e) {
     alapcheck(szerzomu, "Mű nem jó nem jó")
 
 
-    if(szarmazasertek && szerzoertek && szerzomuertek && !szerzo1ertek) {
-        valid = true    
-    }
 
     if(!szerzo1ertek && szerzo1muertek) {
         const parentElement = szerzo1.parentElement; 
