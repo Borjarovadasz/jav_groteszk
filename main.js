@@ -76,11 +76,11 @@ function headergenerator(headerobjek,sor) {
 
 headergenerator(fejlec,tr)
 
-function rendertable() {
-    for(let adat of array) {
+function rendertable(thearray, bodyelement) {
+    for(let adat of thearray) {
         const sor = document.createElement('tr')
 
-        tbody.appendChild(sor)
+        bodyelement.appendChild(sor)
 
         const elsocella = document.createElement('td')
         elsocella.innerHTML = adat.Nemzetiség
@@ -110,7 +110,7 @@ function rendertable() {
     
             sor1.appendChild(negyedikcella)
             sor1.appendChild(ötödikcella)
-            tbody.appendChild(sor1)
+            bodyelement.appendChild(sor1)
         }
        
 
@@ -118,7 +118,7 @@ function rendertable() {
     }
 }
 
-rendertable()
+rendertable(array,tbody)
 
 const form = document.getElementById('form') // megszerezzük az id alapján a formot
 form.addEventListener('submit', function(e) {
