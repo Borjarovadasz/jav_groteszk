@@ -73,7 +73,7 @@ function headergenerator(headerobjek,sor) {
         jo = false //hogyha hibás akkor legyen false a jó és akkor nem adjuk hozzá az adatokat
         
     }
-    return jo //amúgy meg legyen true
+    return jo //visszatérunk a jó változó értékkel (ami amúgy true)
     
 }
 
@@ -94,7 +94,7 @@ function headergenerator(headerobjek,sor) {
         }
         jo = false //hogyha hibás akkor legyen false a jó és akkor nem adjuk hozzá az adatokat
     }
-    return jo //amúgy meg legyen true
+    return jo //visszatérunk a jó változó értékkel (ami amúgy true)
 
 }
 
