@@ -44,7 +44,71 @@ const fejlec  = //létrehozunk egy fejléc arrayt objektumokkal
     
     ]
 
+const formarray = [
+    {
+        label: "Származás:",
+        id: "szarmazas",
+        for: "szarmazas"
+    },
+    {
+        label: "1. szerző:",
+        id: "szerzo1",
+        for: "szerzo1"
+    },
+    {
+        label: "1. szerző műve:",
+        id: "szerzo1mu",
+        for: "szerzo1mu"
+    },
+    {
+        label: "2. szerző:",
+        id: "szerzo2",
+        for: "szerzo2"
+    },
+    {
+        label: "2. szerző műve:",
+        id: "szerzo2mu",
+        for: "szerzo2mu"
+    }
+]
 
+function formgenerate() {
+    const form = document.createElement('form')
+    form.id = "form"
+    form.action = "#"
+
+    for(let i = 0; i < formarray.length; i++) {
+
+        const div = document.createElement('div')
+        const label = document.createElement('label')
+        const input = document.createElement('input')
+        const br = document.createElement('br')
+
+        label.innerHTML = formarray[i].label
+        label.htmlFor = formarray[i].for
+        input.type = "text"
+        input.id = formarray[i].id
+        input.name = formarray[i].id
+
+        const errordiv = document.createElement('div')
+        errordiv.className = "error"
+    
+
+        div.appendChild(label)
+        div.appendChild(br)
+        div.appendChild(input)
+        div.appendChild(errordiv)
+
+        form.appendChild(div)
+    }
+    document.body.appendChild(form)
+    const button = document.createElement('button') //csinálunk egy gombot
+    button.innerHTML = "Hozzáadás" //a gombnak legyen az innerhtml-je a "Hozzáadás"
+    document.body.appendChild(form) //a bodyhoz hozzátesszük a formot
+    form.appendChild(button) //majd a gombot pedig a formhoz
+}
+
+formgenerate()
 
 const tablazat = document.createElement('table')
 
@@ -196,7 +260,7 @@ form.addEventListener('submit', function(e) {
         }
         array.push(ujadat) 
         tbody.innerHTML = "" 
-        rendertable()
+        rendertable(array,tbody)
     }
      
 })
