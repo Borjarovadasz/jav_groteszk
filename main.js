@@ -60,18 +60,21 @@ tablazat.appendChild(tbody)
 const tr = document.createElement('tr')
 thead.appendChild(tr)
 
-for(let adat of fejlec) {
-    const th = document.createElement('th');
+function headergenerator(headerobjek,sor) {
+    for(let adat of headerobjek) {
+        const th = document.createElement('th');
+    
+        th.innerHTML = adat.szoveg
+        console.log(adat);
+        sor.appendChild(th);
+        if(adat.szoveg == "Mű") {
+            th.colSpan = 2
+        }
+        }
+    
+}
 
-    th.innerHTML = adat.szoveg
-    console.log(adat);
-    tr.appendChild(th);
-    if(adat.szoveg == "Mű") {
-        th.colSpan = 2
-    }
-    }
-
-
+headergenerator(fejlec,tr)
 
 function rendertable() {
     for(let adat of array) {
