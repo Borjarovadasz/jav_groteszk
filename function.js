@@ -56,10 +56,11 @@ function headergenerator(headerobjek,sor) {
     
 }
   /**
-     * 
-     * @param {HTMLElement} ertek 
-     * @param {string} uzenet 
-     */
+   * 
+   * @param {HTMLElement} ertek 
+   * @param {string} uzenet 
+   * @returns {boolen} //True ha jó amit írt a user, false ha nem jó
+   */
     
   function alapcheck(ertek, uzenet) { 
     let jo = true //csinálunk egy jo változót aminek az értéke true lesz
@@ -82,6 +83,7 @@ function headergenerator(headerobjek,sor) {
      * @param {HTMLElement} ertek 
      * @param {HTMLElement} ertek2 
      * @param {string} uzenet 
+     * @returns {boolen} //True ha jó amit írt a user, false ha nem jófuggvenyek kiszervezese uj fajlba	
      */
   function optionalcheck(ertek, ertek2, uzenet) {
     let jo = true //csinálunk egy jo változót aminek az értéke true lesz
