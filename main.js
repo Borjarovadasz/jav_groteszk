@@ -127,20 +127,34 @@ form.addEventListener('submit', function(e) {
     const szerzo1mu = document.getElementById("szerzo2mu")
 
 
+    
 
     const szarmazasertek = szarmazas.value //itt egy másik változóba belerakom az elöbb elkért terulet változó értékét
     const szerzoertek = szerzo.value //itt egy másik változóba belerakom az elöbb elkért idoszak változó értékét
     const szerzomuertek = szerzomu.value //itt egy másik változóba belerakom az elöbb elkért tudos1 változó értékét
     const szerzo1ertek = szerzo1.value//itt egy másik változóba belerakom az elöbb elkért tudos2 változó értékét
     const szerzo1muertek = szerzo1mu.value//itt egy másik változóba belerakom az elöbb elkért tudos2 változó értékét
-    const ujadat = { // egy uj objektumot hozunk létre 
-        Nemzetiség: szarmazasertek, // az uj fizikateruletnek a teruletertek lesz az értéke
-        Szerző : szerzoertek, // az idoszaknak az idoszakerteke lesz az értéke
-        Szerző1 : szerzo1ertek, // a tudos1-nek a tudos1ertek lesz az új értéke
-        Mű1 : szerzomuertek ,// a tudos2-nek a tudos2ertek lesz az új értéke
-        Mű2 : szerzo1muertek // a tudos2-nek a tudos2ertek lesz az új értéke
+    
+    let valid = true
+    if(!szarmazasertek || !szerzoertek || !szerzomuertek) {
+        valid = false
     }
-    array.push(ujadat) //belerakjuk az arrayben ami ugye már létezik ezt az új létrehozott adatobjektumunkat.
-    tbody.innerHTML = "" //kitörlöm a táblázatot azért a tbodyt mert abban van igazából az egész táblázat a headerrel nem kell foglalkozni.
-    rendertable() // és az ujonnan belerakott dologgal ujragenerálom a táblát.
+    
+    
+    
+    
+    
+    if(valid) {
+        const ujadat = { // egy uj objektumot hozunk létre 
+            Nemzetiség: szarmazasertek, 
+            Szerző : szerzoertek, 
+            Szerző1 : szerzo1ertek,
+            Mű1 : szerzomuertek ,
+            Mű2 : szerzo1muertek 
+        }
+        array.push(ujadat) 
+        tbody.innerHTML = "" 
+        rendertable()
+    }
+     
 })
